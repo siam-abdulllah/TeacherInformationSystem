@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+
+  <package name="admin" namespace="/" extends="struts-default">
+  
+  	
+     <action name="logIn" class="BasePackage.index" method="login" >
+           <result name="success">index.jsp</result>
+     </action>
+    
+    
+    
+     <action name="Authentication" class="BasePackage.index" method="Authentication" >
+           <result name="success_admin">/WEB-INF/jsp/UserInfo.jsp</result>
+           <result name="success_user">/WEB-INF/jsp/CourseDetail.jsp</result>
+           <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
+     </action>
+      <action name="UpdateUser" class="BasePackage.index" method="UpdateUser" >
+           <result name="success">/WEB-INF/jsp/UserInfo.jsp</result>
+           
+           <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
+     </action>
+     <action name="DeleteUserInformation" class="BasePackage.index" method="DeleteUserInformation" >
+     </action>
+     <action name="DeleteUserInformationSuccess" class="BasePackage.index" method="DeleteUserInformationSuccess" >
+           <result name="success">/WEB-INF/jsp/UserInfo.jsp</result>
+     </action>
+     <action name="AddUser" class="BasePackage.index" method="AddUser" >
+           <result name="success">/WEB-INF/jsp/UserInfo.jsp</result>
+           
+           <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
+     </action>
+     <action name="SignUp" class="BasePackage.index" method="SignUp" >
+           <result name="success">/WEB-INF/jsp/SignUpSuccess.jsp</result>
+           
+           <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
+     </action>
+     <action name="LogOut" class="BasePackage.index" method="LogOut" >
+           <result name="success">index.jsp</result>
+     </action>
+     
+     <!-- <action name="Authentication" class="test.index" method="Authentication" >
+           <result name="success">/WEB-INF/jsp/index.jsp</result>
+           <result name="fail">/WEB-INF/jsp/loginFail.jsp</result>
+     </action>
+     <action name="dataValidation" class="test.index" method="dataValidation" >
+           <result name="success">/WEB-INF/jsp/main4.jsp</result>
+           <result name="fail">/WEB-INF/jsp/index.jsp</result>
+           
+     </action> -->
+     <!--  <action name="dataRetrieve" class="test.index" method="dataRetrieve" >
+           <result name="success">/WEB-INF/jsp/main4.jsp</result>
+           <result name="fail">/WEB-INF/jsp/index.jsp</result>
+     </action> -->
+     <!-- <action name="dataValidation" class="test.index" method="dataValidation" >
+           <result name="success" type="redirectAction">
+	           	<param name="namespace">/</param>
+	           	<param name="actionName">dataRetrieve</param>
+           </result>
+           <result name="fail">/WEB-INF/jsp/index.jsp</result>
+     </action> -->
+    
+     
+     
+  </package>
+</struts>
