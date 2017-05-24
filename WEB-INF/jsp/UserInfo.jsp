@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <!-- <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
        --><br><br>
       <input type="button" value="show" onClick>
-       <div class="table-responsive"> 
+      <div class="table-responsive"> 
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
        		<table id="user_table"  class="table table-bordered" border="1">
 			<thead>
@@ -132,11 +132,69 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    
       <h4><small>RECENT POSTS</small></h4>
       <hr>
-      <h2>Officially Blogging</h2>
+      <h2>Candidate Information</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
       <h5><span class="label label-success">Lorem</span></h5><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+       --><hr>
+       <div class="table-responsive"> 
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+       	<table id="user_table"  class="table table-bordered" border="1">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+					<td>Gender</td>
+					<td>City</td>
+					<td>Phone No.</td>
+					<td>Email</td>
+					<td>&nbsp;</td>
+				</tr>
+			</thead>
+			<tbody>
+			
+				<c:forEach items="${requestScope.candidateList}"
+				var="CandidateInformationList" varStatus="loop">
+				<tr>
+					<td>${CandidateInformationList.id}</td>
+					<td>${CandidateInformationList.name}</td>
+					<td>${CandidateInformationList.gender}</td>
+					<td>${CandidateInformationList.city}</td>
+					<td>${CandidateInformationList.phoneNo}</td>
+					<td>${CandidateInformationList.email}</td>
+					<%-- <td>${UserInformationList.role}</td> --%>
+					<%-- <c:set var = "role" scope = "session" value = "${UserInformationList.role}"/> --%>
+					<c:set var="test" value="${CandidateInformationList.approved}"/>
+					 <%
+					    String role=(String)pageContext.getAttribute("test"); 
+					    if(role.equals("Y"))
+					    { %> 
+					    	<td>Approved</td>
+					    <% }
+					    else if (role.equals("N"))  //No exception.
+					    
+					    { %>
+					     	<td>Not Approved</td>
+					    <% }
+					  	%>  
+     				 <%-- <c:if test = "${UserInformationList.role} == '1'">
+     				 	<td>Admin</td>
+     				 </c:if>
+     				 <c:if test = "${UserInformationList.role} == '2'">
+     					 <td>General User</td>
+     				 </c:if>
+					<td>${UserInformationList.userName}</td>
+					<td>${UserInformationList.approved}</td> --%>
+					<td><a  href="/TeacherInformationSystem/UserInfoEdit.jsp?id=${UserInformationList.id}&email=${UserInformationList.email}&passWord=${UserInformationList.passWord}&role=${UserInformationList.role}&userName=${UserInformationList.userName}&approved=${UserInformationList.approved}">Edit</a></td>
+					<td><a href="/TeacherInformationSystem/UserInfoDelete.jsp?id=${UserInformationList.id}&email=${UserInformationList.email}&passWord=${UserInformationList.passWord}&role=${UserInformationList.role}&userName=${UserInformationList.userName}&approved=${UserInformationList.approved}">Delete</a></td>
+				</tr>
+				</c:forEach>
+			</tbody>
+			
+			
+		</table>  
+       </div>
+       
 
       <h4>Leave a Comment:</h4>
       <form role="form">

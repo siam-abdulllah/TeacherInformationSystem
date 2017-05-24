@@ -174,13 +174,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																	<div class="signin-form profile">
 																	<h3 class="agileinfo_sign">Admission Form</h3>	
 																			<div class="login-form">
-																				<form action="#" method="post">
-																				   <input type="text" name="name" placeholder="Name of the Candidate" required="">
+																				<form action="CandidateApply" method="post">
+																				   <input type="text" name="candidateDTO.name" placeholder="Name of the Candidate" required="">
 																					
-																					 <input type="text" name="gender" placeholder="Gender" required="">
-																					 <input type="text" name="city" placeholder="City" required="">
-																					 <input type="text" name="phone" placeholder="Phone No" required="">
-																					 <input type="email" name="email" placeholder="Email" required="">
+																					 <input type="text" name="candidateDTO.gender" placeholder="Gender" required="">
+																					 <input type="text" name="candidateDTO.city" placeholder="City" required="">
+																					 <input type="text" name="candidateDTO.phoneNo" placeholder="Phone No" required="">
+																					 <input type="email" name="candidateDTO.email" placeholder="Email" required="">
 																					<div class="address">
 																					  <select class="form-control">
 																							<option>Select Courses</option>

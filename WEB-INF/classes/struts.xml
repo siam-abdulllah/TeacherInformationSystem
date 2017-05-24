@@ -34,11 +34,20 @@
            
            <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
      </action>
+     
+      <action name="CandidateApply" class="BasePackage.index" method="CandidateApply" >
+           <result name="success">/WEB-INF/jsp/SignUpSuccess.jsp</result>
+           
+           <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
+     </action>
+     
+     
      <action name="SignUp" class="BasePackage.index" method="SignUp" >
            <result name="success">/WEB-INF/jsp/SignUpSuccess.jsp</result>
            
            <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
      </action>
+    
      <action name="LogOut" class="BasePackage.index" method="LogOut" >
            <result name="success">index.jsp</result>
      </action>
