@@ -148,6 +148,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<td>City</td>
 					<td>Phone No.</td>
 					<td>Email</td>
+					<td>Approved</td>
+					<td>Course</td>
+					<td>Campus</td>
+					<td>Address</td>
+					<td>Additional Note</td>
 					<td>&nbsp;</td>
 				</tr>
 			</thead>
@@ -185,8 +190,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      				 </c:if>
 					<td>${UserInformationList.userName}</td>
 					<td>${UserInformationList.approved}</td> --%>
-					<td><a  href="/TeacherInformationSystem/UserInfoEdit.jsp?id=${UserInformationList.id}&email=${UserInformationList.email}&passWord=${UserInformationList.passWord}&role=${UserInformationList.role}&userName=${UserInformationList.userName}&approved=${UserInformationList.approved}">Edit</a></td>
-					<td><a href="/TeacherInformationSystem/UserInfoDelete.jsp?id=${UserInformationList.id}&email=${UserInformationList.email}&passWord=${UserInformationList.passWord}&role=${UserInformationList.role}&userName=${UserInformationList.userName}&approved=${UserInformationList.approved}">Delete</a></td>
+					<td>${CandidateInformationList.courseId}</td>
+					<td>${CandidateInformationList.campusId}</td>
+					<td>${CandidateInformationList.address}</td>
+					<td>${CandidateInformationList.additionalNote}</td>
+					<td><a  href="/TeacherInformationSystem/CandidateInfoEdit.jsp?id=${CandidateInformationList.id}&name=${CandidateInformationList.name}&gender=${CandidateInformationList.gender}&city=${CandidateInformationList.city}&phoneNo=${CandidateInformationList.phoneNo}&email=${CandidateInformationList.email}&approved=${CandidateInformationList.approved}&courseId=${CandidateInformationList.courseId}&campusId=${CandidateInformationList.campusId}&address=${CandidateInformationList.address}&additionalNote=${CandidateInformationList.additionalNote}">Edit</a></td>
+					<td><a href="/TeacherInformationSystem/CandidateInfoDelete.jsp?id=${CandidateInformationList.id}&name=${CandidateInformationList.name}&gender=${CandidateInformationList.gender}&city=${CandidateInformationList.city}&phoneNo=${CandidateInformationList.phoneNo}&email=${CandidateInformationList.email}&approved=${CandidateInformationList.approved}&courseId=${CandidateInformationList.courseId}&campusId=${CandidateInformationList.campusId}&address=${CandidateInformationList.address}&additionalNote=${CandidateInformationList.additionalNote}">Delete</a></td>
 				</tr>
 				</c:forEach>
 			</tbody>

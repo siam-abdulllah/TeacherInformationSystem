@@ -25,27 +25,53 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <form>
   		<table>
-		  <tr>
-		  	<td><label>Email</label></td>
-		  	<td><input type="text" readonly name="logInDTO.email" value="<%= request.getParameter("email")%>"></td>
-		  	<td><input type="hidden" id="userId" name="logInDTO.id" value="<%= request.getParameter("id")%>"></td>
+		 <tr>
+		  	<td><label>Name</label></td>
+		  	<td><input type="text" name="candidateDTO.name" value="<%= request.getParameter("name")%>"></td>
+		  	<td><input type="hidden" name="candidateDTO.id" value="<%= request.getParameter("id")%>"></td>
 		  </tr>
 		  <tr>
-		  	<td><label>Password</label></td>
-		  	<td><input type="text" readonly name="logInDTO.passWord" value="<%= request.getParameter("passWord")%>"></td>
+		  	<td><label>Gender</label></td>
+		  	<td><input type="text" name="candidateDTO.gender" value="<%= request.getParameter("gender")%>"></td>
 		  </tr>
 		  <tr>
-		  	<td><label>Role</label></td>
-		  	<td><input type="text" readonly name="logInDTO.role" value="<%= request.getParameter("role")%>"></td>
+		  	<td><label>City</label></td>
+		  	<td><input type="text" name="candidateDTO.city" value="<%= request.getParameter("city")%>"></td>
 		  </tr>
 		  <tr>
-		  	<td><label>User Name</label></td>
-		  	<td><input type="text" readonly name="logInDTO.userName" value="<%= request.getParameter("userName")%>"></td>
+		  	<td><label>Phone No.</label></td>
+		  	<td><input type="text" name="candidateDTO.phoneNo" value="<%= request.getParameter("phoneNo")%>"></td>
 		  </tr>
+		  <tr>
+		  	<td><label>Approved</label></td>
+		  <%-- 	<td><input type="text" name="logInDTO.approved" value="<%= request.getParameter("approved")%>"></td> --%>
+		  <%  String yesChecked="";
+		  	  String noChecked="";
+		  	  String approved=request.getParameter("approved");
+		  if (approved.equals("Y")) 
+		  	 { 
+		  	 	yesChecked="checked";
+		  	 }
+		  else
+			  {
+			 	 noChecked="checked";
+			  }%>
+		  	<td><input type="radio" name="candidateDTO.approved" <%=yesChecked %> value="Y"> Yes<br>
+		  	<input type="radio" name="candidateDTO.approved" <%=noChecked %> value="N"> No<br></td>
+		  </tr>
+		  <tr>
+		  	<td><label>Address</label></td>
+		  	<td><input type="text" name="candidateDTO.address" value="<%= request.getParameter("address")%>"></td>
+		  </tr>
+		  <tr>
+		  	<td><label>Additional Note</label></td>
+		  	<td><input type="text" name="candidateDTO.addtionalNote" value="<%= request.getParameter("addtionalNote")%>"></td>
+		  </tr>
+		  
   		</table>
   		<button type="button" onClick="DeleteUser();" >Delete</button>
   </form>
-   <script type="text/javascript" src="/TeacherInformationSystem/resources/js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="/TeacherInformationSystem/resources/js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript">
   function DeleteUser(){
   var id=document.getElementById("userId").value;

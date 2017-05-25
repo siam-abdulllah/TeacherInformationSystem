@@ -40,7 +40,17 @@
            
            <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
      </action>
-     
+     <action name="UpdateCandidate" class="BasePackage.index" method="UpdateCandidate" >
+            <result name="success">/WEB-INF/jsp/UserInfo.jsp</result>
+           
+           <result name="fail">/WEB-INF/jsp/logInFail.jsp</result>
+     </action>
+    
+     <action name="CandidateDelete" class="BasePackage.index" method="CandidateDelete" >
+      </action>
+     <action name="DeleteCandidateInformationSuccess" class="BasePackage.index" method="DeleteCandidateInformationSuccess" >
+           <result name="success">/WEB-INF/jsp/UserInfo.jsp</result>
+     </action>
      
      <action name="SignUp" class="BasePackage.index" method="SignUp" >
            <result name="success">/WEB-INF/jsp/SignUpSuccess.jsp</result>
